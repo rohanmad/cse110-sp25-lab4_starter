@@ -6,16 +6,19 @@
  * @returns The sum of the two numbers if add is true and false otherwise.
  */
 function sumValues(num1, num2, add) {
-    if (add) {
-        let result = 0;
+    if(Number.isInteger(num1) && Number.isInteger(num2)){
+        if (add) {
+            let result = 0;
 
-        result = num1 + num2;
+            result = num1 + num2;
 
-        return result;
+            return result;
+        }
+        else {
+            return add;
+        }
     }
-    else {
-        return !add;
-    }
+    return false;
 }
 
 /**
