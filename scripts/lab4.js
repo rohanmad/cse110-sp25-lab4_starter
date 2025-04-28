@@ -28,15 +28,19 @@ function discountPrices(prices, discount) {
     if(prices.length==0){
         return false;
     }
-    const discounted = [];
-    const length = prices.length;
-    let discountedPrice = 0
-    for(let i = 0; i < length; i++) {
-        discountedPrice = prices[i] * (1 - discount);
-        discounted.push(discountedPrice);
-    }
+    if(Array.isArray(prices)){
+        const discounted = [];
+        const length = prices.length;
+        let discountedPrice = 0
+        for(let i = 0; i < length; i++) {
+            discountedPrice = prices[i] * (1 - discount);
+            discounted.push(discountedPrice);
+        }
 
-    return discounted;
+        return discounted;
+    }
+    return false;
+
 }
 
 module.exports = {sumValues, discountPrices};
